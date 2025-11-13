@@ -4,9 +4,11 @@ import NavButton from './NavButton';
 
 const MainLogo = () => {
   return (
-    <NavButton href="/">
-      PIERŚCIONEX
-    </NavButton>
+    <span className="text-3xl">
+      <NavButton href="/">
+        PIERŚCIONEX
+      </NavButton>
+    </span>
   )
 };
 

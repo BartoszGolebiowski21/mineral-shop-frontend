@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <>
       <NavBar />
-      <div className="h-px bg-gray-300 mx-[5%]"></div>
+      <div className="h-px bg-gray-300 mx-[2%]"></div>
       <Menu />
     </>
   )
