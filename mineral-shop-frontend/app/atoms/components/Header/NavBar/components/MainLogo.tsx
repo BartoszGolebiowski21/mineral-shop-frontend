@@ -1,5 +1,6 @@
 import React from 'react'
-import NavButton from './NavButton'
+import NavButton from './NavButton';
+
 
 const MainLogo = () => {
   return (
@@ -7,6 +8,6 @@ const MainLogo = () => {
       PIERŚCIONEX
     </NavButton>
   )
-}
+};
 
-export default MainLogo
+export default MainLogo;

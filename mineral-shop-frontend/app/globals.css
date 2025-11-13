@@ -5,8 +5,21 @@
   color: black;
 }
 
-.nav-container {
+.menu-container {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
+
+.nav-container {
+  display: flex;
+}
+
+.nav-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+

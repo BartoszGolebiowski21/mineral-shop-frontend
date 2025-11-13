@@ -4,7 +4,7 @@ import NavButton from '../NavBar/components/NavButton';
 
 const Menu = () => {
   return (
-    <div className="nav-container">
+    <div className="menu-container">
       <NavButton href="/rings">
         Pierścionki
       </NavButton>
