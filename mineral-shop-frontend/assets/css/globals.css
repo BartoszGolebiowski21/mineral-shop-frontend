@@ -23,3 +23,16 @@
   padding-right: 1rem;
 }
 
+.filter-bar {
+  flex-basis: 30%;
+}
+
+.product-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+}
+
+.page-container {
+  display: flex;
+}
