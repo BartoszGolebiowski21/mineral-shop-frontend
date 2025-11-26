@@ -1,5 +1,6 @@
 import React from 'react';
 import { Product } from '../../types/ProductTypes';
+import ImagesWrapper from './ImagesWrapper';
 
 interface ProductCardProps {
   product: Product;
@@ -8,18 +9,9 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <div style={{ marginBottom: "20px" }}>
-      <img 
-        src={product.image} 
-        alt={product.name}
-        style={{
-          width: "100%",
-          aspectRatio: "1 / 1",
-          objectFit: "cover",
-          borderRadius: "10px",
-        }}
-      />
+      <ImagesWrapper images={product.images} />
       <h3>{product.name}</h3>
-      <p>Cena: {product.price} zł</p>
+      <p>{product.price} PLN</p>
     </div>
   )
 };

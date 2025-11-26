@@ -4,11 +4,11 @@ import NavButton from './NavButton';
 
 const MainLogo = () => {
   return (
-    <span className="text-3xl">
-      <NavButton href="/">
-        PIERŚCIONEX
-      </NavButton>
-    </span>
+    <NavButton href="/">
+      <span className="text-3xl whitespace-nowrap">
+        Kamykowe Rękodzieło
+      </span>
+    </NavButton>
   )
 };
 
