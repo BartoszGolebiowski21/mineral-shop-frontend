@@ -1,0 +1,5 @@
+.filter-bar {
+  position: sticky;
+  top: 0;
+  flex: 0 0 20%;
+}

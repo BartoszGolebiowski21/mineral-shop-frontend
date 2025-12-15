@@ -1,0 +1,25 @@
+.product-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+}
+
+.product-image {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.second-image {
+  display: none;
+}
+
+.product-image-wrapper:hover .main-image {
+  display: none;
+}
+
+.product-image-wrapper:hover .second-image {
+  display: block;
+}

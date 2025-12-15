@@ -10,6 +10,7 @@ const page = () => {
 
   useEffect(() => {
     fetch('http://localhost:8000/api/products/')
+    // fetch('https://berneice-ferniest-milo.ngrok-free.dev/api/products/')
       .then(res => res.json())
       .then(data => setProducts(data));
   }, []);
@@ -17,10 +18,10 @@ const page = () => {
   if (!products) return null;
 
   return (
-    <div className='page-container'>
+    <>
       <div className='filter-bar'><FilterBar /></div>
       <ProductList products={products} />
-    </div>
+    </>
   )
 };
 
