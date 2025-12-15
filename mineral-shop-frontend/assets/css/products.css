@@ -10,16 +10,24 @@
   width: 100%;
   border-radius: 5px;
   cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+
+.product-image-wrapper {
+  position: relative;
 }
 
 .second-image {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
 }
 
 .product-image-wrapper:hover .main-image {
-  display: none;
+  opacity: 0;
 }
 
 .product-image-wrapper:hover .second-image {
-  display: block;
+  opacity: 1;
 }
