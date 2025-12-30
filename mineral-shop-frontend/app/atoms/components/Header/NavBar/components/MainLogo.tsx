@@ -5,7 +5,7 @@ import NavButton from './NavButton';
 const MainLogo = () => {
   return (
     <NavButton href="/">
-      <span className="text-3xl whitespace-nowrap">
+      <span className="main-logo">
         Kamykowe Rękodzieło
       </span>
     </NavButton>

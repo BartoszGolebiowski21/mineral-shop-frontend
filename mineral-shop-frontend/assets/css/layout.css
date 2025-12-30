@@ -11,6 +11,52 @@
   justify-content: space-evenly;
 }
 
+.header-container {
+  display: flex;
+  height: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 58rem) {
+  .logo-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.hamburger-wrapper {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+}
+
+.nav-buttons-wrapper {
+  display: none;
+}
+
+@media (min-width: 44rem) {
+  .hamburger-wrapper {
+    display: none;
+  }
+
+  .nav-buttons-wrapper {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+.main-logo {
+  font-size: 2rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 31rem) {
+  .main-logo {
+    font-size: 6vw;
+  }
+}
+
 .nav-container {
   display: flex;
 }
