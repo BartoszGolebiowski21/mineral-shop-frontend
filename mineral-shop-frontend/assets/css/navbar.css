@@ -1,0 +1,12 @@
+.hamburger {
+  cursor: pointer;
+}
+
+.nav-dropdown {
+  position: absolute;
+  right: 5;
+  z-index: 10;
+  padding: 0.5rem;
+  background-color: white;
+  box-shadow: 0px 0px 4px 1px #a0a0a0;
+}
