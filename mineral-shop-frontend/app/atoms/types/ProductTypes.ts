@@ -5,6 +5,7 @@ export interface Image {
 
 export interface Product {
   id: number;
+  slug: string;
   name: string;
   price: number;
   images: Image[];

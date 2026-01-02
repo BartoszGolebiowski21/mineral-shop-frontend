@@ -1,6 +1,7 @@
 import React from 'react';
 import { Product } from '../../types/ProductTypes';
 import ImagesWrapper from './ImagesWrapper';
+import Link from 'next/link';
 
 interface ProductCardProps {
   product: Product;
@@ -8,11 +9,11 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <div style={{ marginBottom: "20px" }}>
+    <Link href={`/products/rings/${product.slug}`}>
       <ImagesWrapper images={product.images} />
       <h3>{product.name}</h3>
       <p>{product.price} PLN</p>
-    </div>
+    </Link>
   )
 };
 
