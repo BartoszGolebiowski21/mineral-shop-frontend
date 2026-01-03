@@ -1,4 +1,4 @@
-import ProductOverview from '@/app/atoms/components/ProductOverview/ProductOverview';
+import ProductOverviewContainer from '@/app/atoms/components/ProductOverview/ProductOverviewContainer';
 
 type PageProps = {
   params: Promise<{
@@ -9,5 +9,5 @@ type PageProps = {
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
 
-  return <ProductOverview slug={slug} />;
+  return <ProductOverviewContainer slug={slug} />;
 };

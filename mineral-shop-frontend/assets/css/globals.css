@@ -3,6 +3,7 @@
 @import './sidebar.css';
 @import './products.css';
 @import './navbar.css';
+@import './reusable.css';
 
 .body {
   background-color: white;

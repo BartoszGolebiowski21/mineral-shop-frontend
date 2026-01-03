@@ -1,9 +1,10 @@
 import React from 'react';
-import { Image } from '../../types/ProductTypes';
+import { ImageObj } from '../../types/ProductTypes';
 import ProductImage from './ProductImage';
 
+
 interface ImagesWrapperProps {
-  images: Image[];
+  images: ImageObj[];
 }
 
 const ImagesWrapper: React.FC<ImagesWrapperProps> = ({ images }) => {

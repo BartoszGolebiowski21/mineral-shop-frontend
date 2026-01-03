@@ -1,29 +1,31 @@
+import { ProductDetail } from "../../types/ProductTypes";
+import ImageSection from "./ImageSection";
+import InfoSection from "./InfoSection";
+import ProductActions from "./ProductActions";
+
+
 interface ProductOverviewProps {
-  slug: string;
+  product: ProductDetail;
 }
 
-const getProduct = async (slug: string) => {
-  const res = await fetch(
-    `http://localhost:8000/api/products/${slug}/`,
-    {
-      next: { revalidate: 60 },
-    }
-  );
-
-  if (!res.ok) {
-    throw new Error("Product not found");
-  }
-
-  return res.json();
-};
-
-const ProductOverview = async ({ slug }: ProductOverviewProps) => {
-  const product = await getProduct(slug);
+const ProductOverview: React.FC<ProductOverviewProps> = ({ product }) => {
 
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <p>{product.price} zł</p>
+    <div className="product-overview-container">
+      <ImageSection
+        images={product.images}
+      />
+
+      <div className="product-overview-info-container">
+        <InfoSection
+          name={product.name}
+          price={product.price}
+          stones={product.stones}
+          size={product.size}
+        />
+
+        <ProductActions productId={product.id} />
+      </div>
     </div>
   );
 };

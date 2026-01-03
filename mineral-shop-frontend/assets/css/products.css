@@ -31,3 +31,18 @@
 .product-image-wrapper:hover .second-image {
   opacity: 1;
 }
+
+.product-overview-container {
+  display: flex;
+  width: 100%;
+}
+
+.product-detail-image-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.product-overview-info-container {
+  width: 20rem;
+}

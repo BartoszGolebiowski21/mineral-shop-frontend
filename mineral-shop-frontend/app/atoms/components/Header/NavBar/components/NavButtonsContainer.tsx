@@ -8,7 +8,7 @@ import CartIcon from '@/assets/svg-iconts/CartIcon';
 const NavButtonsContainer = () => {
   return (
     <div className="nav-container">
-      <NavButton href="/wishlist">
+      {/* <NavButton href="/wishlist">
         <HeartIcon />
         Ulubione
       </NavButton>
@@ -16,7 +16,7 @@ const NavButtonsContainer = () => {
       <NavButton href="/account">
         <PersonIcon />
         Konto
-      </NavButton>
+      </NavButton> */}
 
       <NavButton href="/cart">
         <CartIcon />
