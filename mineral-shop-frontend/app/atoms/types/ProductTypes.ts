@@ -28,6 +28,7 @@ export interface Product {
 }
 
 export interface ProductDetail extends Product {
+  code: string;
   description: string;
   stones: Stone[];
   size: Size;
