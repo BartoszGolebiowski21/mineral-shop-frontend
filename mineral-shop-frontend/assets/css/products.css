@@ -57,7 +57,7 @@
   margin-left: 1rem;
 }
 
-@media (max-width: 50rem) {
+@media (max-width: 60rem) {
   .product-overview-container {
     flex-direction: column;
   }
