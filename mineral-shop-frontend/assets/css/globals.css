@@ -4,6 +4,7 @@
 @import './products.css';
 @import './navbar.css';
 @import './reusable.css';
+@import './product-page.css';
 
 .body {
   background-color: white;

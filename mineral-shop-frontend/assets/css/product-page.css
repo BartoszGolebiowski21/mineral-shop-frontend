@@ -1,0 +1,71 @@
+.product-overview-container {
+  display: flex;
+  width: 100%;
+}
+
+.product-detail-image-container {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+.image-wrapper {
+  width: 50%;
+}
+
+.image-wrapper img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.product-overview-info-container {
+  flex: 0 0 30rem;
+  margin-left: 1rem;
+}
+
+@media (max-width: 60rem) {
+  .product-overview-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 80rem) {
+  .product-detail-image-container {
+    flex-direction: column;
+  }
+
+  .image-wrapper {
+    width: 100%;
+  }
+}
+
+.product-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.pill-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.pill {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: #c7b198;
+  color: white;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 1.2rem;
+}
+
+.size {
+  font-weight: 500;
+}
+
+.description {
+  white-space: pre-line;
+}
