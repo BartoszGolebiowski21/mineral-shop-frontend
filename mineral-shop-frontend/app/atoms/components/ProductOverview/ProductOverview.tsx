@@ -18,10 +18,7 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({ product }) => {
 
       <div className="product-overview-info-container">
         <InfoSection
-          name={product.name}
-          price={product.price}
-          stones={product.stones}
-          size={product.size}
+          product={product}
         />
 
         <ProductActions productId={product.id} />

@@ -11,7 +11,7 @@ const ImageSection: React.FC<ImageSectionProps> = ({ images }) => {
 
   return (
     <div className="product-detail-image-container">
-      {/* <div> */}
+      {/* <div className="image-wrapper">
         <Image
           src={image1.upload}
           alt={image1.upload}
@@ -19,8 +19,8 @@ const ImageSection: React.FC<ImageSectionProps> = ({ images }) => {
           height={300}
           unoptimized
         />
-      {/* </div>
-      <div> */}
+      </div>
+      <div className="image-wrapper">
         <Image
           src={image2.upload}
           alt={image2.upload}
@@ -28,7 +28,20 @@ const ImageSection: React.FC<ImageSectionProps> = ({ images }) => {
           height={300}
           unoptimized
         />
-      {/* </div> */}
+      </div> */}
+
+      <div className="image-wrapper">
+        <img
+          src={image1.upload}
+          alt={image1.upload}
+        />
+      </div>
+      <div className="image-wrapper">
+        <img
+          src={image2.upload}
+          alt={image2.upload}
+        />
+      </div>
     </div>
   )
 };

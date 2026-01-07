@@ -1,20 +1,18 @@
-import { Size, Stone } from "../../types/ProductTypes";
+import { ProductDetail } from "../../types/ProductTypes";
 
 interface InfoSectionProps {
-  name: string;
-  price: number;
-  stones: Stone[];
-  size: Size;
+  product: ProductDetail;
 }
 
-const InfoSection: React.FC<InfoSectionProps> = ({ name, price, stones, size}) => {
+const InfoSection: React.FC<InfoSectionProps> = ({ product }) => {
   return (
-    <div>
-      <h1>{name}</h1>
-      <p>{price} zł</p>
-      <p>{stones.map(s => s.name)}</p>
-      <p>Rozmiar: {size.name}</p>
-    </div>
+    <>
+      <h1>{product.name}</h1>
+      <p>{product.price} zł</p>
+      <p>{product.stones.map(s => s.name)}</p>
+      <p>Rozmiar: {product.size.name}</p>
+      <p>{product.description}</p>
+    </>
   )
 };
 
