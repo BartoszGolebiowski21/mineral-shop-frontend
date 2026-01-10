@@ -1,11 +1,6 @@
-.cart-button {
-  position: relative;
-}
-
 .minicart {
   min-width: 12rem;
   min-height: 6rem;
-  display: none;
   position: absolute;
   right: 1rem;
   top: 3rem;
@@ -13,14 +8,23 @@
   box-shadow: 0px 0px 4px 1px #a0a0a0;
   padding: 1rem;
   z-index: 50;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease 0.5s,
+    visibility 0s linear 0.5s;
 }
 
-.cart-button:hover + .minicart {
-  display: block;
-}
-
+.cart-button:hover + .minicart,
 .minicart:hover {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transition-delay: 0s;
 }
 
 .minicart__product-container {
