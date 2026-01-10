@@ -8,11 +8,18 @@ const MiniCart = () => {
 
   return (
     <div className='minicart'>
-      {productsInCart.map((product) => (
-        <MiniProductCard key={product.id} product={product} />
-      ))}
+      <p className="text-[1.4rem] font-medium mb-4">Mój koszyk</p>
+      <div>
+        {productsInCart.length === 0 ? (
+          <span>Koszyk jest pusty</span>
+        ) : (
+          productsInCart.map((product) => (
+            <MiniProductCard key={product.id} product={product} />
+          ))
+        )}
+      </div>
     </div>
-  )
+  );
 };
 
 export default MiniCart;

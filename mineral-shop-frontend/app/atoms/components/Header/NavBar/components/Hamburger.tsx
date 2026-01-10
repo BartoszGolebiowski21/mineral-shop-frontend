@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import HamburgerIcon from '@/assets/svg-iconts/HamburgerIcon';
+import HamburgerIcon from '@/assets/svg-icons/HamburgerIcon';
 import NavButtonsContainer from './NavButtonsContainer';
 
 const Hamburger = () => {

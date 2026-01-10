@@ -15,6 +15,25 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [productsInCart, setProductsInCart] = useState<Product[]>([]);
 
   useEffect(() => {
+    const handleStorageChange = (event: StorageEvent) => {
+      if (event.key === "cart") {
+        const newCart = event.newValue;
+        if (newCart) {
+          setProductsInCart(JSON.parse(newCart));
+        } else {
+          setProductsInCart([]);
+        }
+      }
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+
+  useEffect(() => {
     const cartString = localStorage.getItem("cart");
     if (cartString) {
       setProductsInCart(JSON.parse(cartString));

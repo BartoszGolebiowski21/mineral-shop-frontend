@@ -11,3 +11,7 @@
 .custom-button:hover {
   background-color: #c7b198;
 }
+
+.trash-icon {
+  cursor: pointer;
+}

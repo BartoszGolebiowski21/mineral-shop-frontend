@@ -1,6 +1,5 @@
-import React from 'react'
-import MiniCart from './MiniCart'
-import CartIcon from '@/assets/svg-iconts/CartIcon'
+import MiniCart from './MiniCart';
+import CartIcon from '@/assets/svg-icons/CartIcon';
 
 const CartButton = () => {
   return (
@@ -12,6 +11,6 @@ const CartButton = () => {
       </div>
     </>
   )
-}
+};
 
-export default CartButton
+export default CartButton;
