@@ -1,0 +1,22 @@
+.cart-button {
+  position: relative;
+}
+
+.minicart {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: 3rem;
+  background-color: white;
+  box-shadow: 0px 0px 4px 1px #a0a0a0;
+  padding: 0.5rem;
+  z-index: 50;
+}
+
+.cart-button:hover + .minicart {
+  display: block;
+}
+
+.minicart:hover {
+  display: block;
+}

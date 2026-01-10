@@ -21,7 +21,7 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({ product }) => {
           product={product}
         />
 
-        <ProductActions productId={product.id} />
+        <ProductActions product={product} />
       </div>
     </div>
   );

@@ -1,28 +1,19 @@
 "use client";
 
+import { useCartContext } from "../../context/CartContext";
+import { Product } from "../../types/ProductTypes";
+
 interface ProductActionsProps {
-  productId: number;
+  product: Product;
 }
 
-const ProductActions: React.FC<ProductActionsProps> = ({ productId }) => {
+const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
 
-  const addToCart = (id: number) => {
-    const cartString = localStorage.getItem("cart");
-    const cart: number[] = cartString ? JSON.parse(cartString) : [];
-
-    if (!cart.includes(id)) {
-      cart.push(id);
-      localStorage.setItem("cart", JSON.stringify(cart));
-      alert("Produkt dodany do koszyka!");
-    } else {
-      alert("Produkt już jest w koszyku!");
-    }
-  };
-
+  const { addToCart } = useCartContext();
 
   return (
     <div
-      onClick={() => addToCart(productId)}
+      onClick={() => addToCart(product)}
       className="custom-button"
     >
       Do koszyka
