@@ -18,7 +18,7 @@
     visibility 0s linear 0.5s;
 }
 
-.cart-button:hover + .minicart,
+.cart__button:hover + .minicart,
 .minicart:hover {
   opacity: 1;
   visibility: visible;
@@ -39,7 +39,7 @@
   padding-right: 0.5rem;
 }
 
-.cart-button {
+.cart__button {
   position: relative;
 }
 
@@ -57,7 +57,7 @@
   }
 }
 
-.cart-product-counter {
+.cart__product-counter {
   position: absolute;
   top: -0.4rem;
   right: 1rem;

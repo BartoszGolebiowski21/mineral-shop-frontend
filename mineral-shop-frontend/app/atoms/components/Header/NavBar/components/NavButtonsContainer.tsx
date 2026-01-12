@@ -7,7 +7,7 @@ import CartProductCounter from '../../../CartButton/CartProductCounter';
 const NavButtonsContainer = () => {
   return (
     <div className="nav-container">
-      <NavButton href="/cart" className="cart-button">
+      <NavButton href="/cart" className="cart__button">
         <CartIcon />
         <CartProductCounter />
         Koszyk
