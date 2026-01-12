@@ -3,6 +3,7 @@ import { Product } from '../../types/ProductTypes'
 import { useCartContext } from '../../context/CartContext';
 import TrashIcon from '@/assets/svg-icons/TrashIcon';
 import Image from "next/image";
+import Link from 'next/link';
 
 interface MiniProductCardProps {
   product: Product;
@@ -13,19 +14,24 @@ const MiniProductCard: React.FC<MiniProductCardProps> = ({ product }) => {
 
   return (
     <div className='minicart__product-container mb-4'>
-      <Image
-        src={product.images[0].upload}
-        alt={product.images[0].upload}
-        width={100}
-        height={100}
-        unoptimized
-      />
+      <Link href={`/products/rings/${product.slug}`}>
+        <Image
+          src={product.images[0].upload}
+          alt={product.images[0].upload}
+          width={100}
+          height={100}
+          unoptimized
+        />
+      </Link>
 
-      <span>{product.name}</span>
-
+      <Link href={`/products/rings/${product.slug}`}>
+        <span>{product.name}</span>
+      </Link>
+      
       <div
-        className='trash-icon'
+        className='cursor-pointer ml-auto'
         onClick={() => removeFromCart(product.id)}
+        title="Usuń produkt"
       >
         <TrashIcon />
       </div>

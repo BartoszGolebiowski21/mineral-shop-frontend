@@ -14,12 +14,30 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [productsInCart, setProductsInCart] = useState<Product[]>([]);
 
+  // Function to fetch products using their IDs
+  const fetchProductsByIds = async (ids: number[]) => {
+    try {
+      const response = await fetch(`http://localhost:8000/api/products?id__in=${ids.join(",")}`);
+      if (!response.ok) throw new Error("Error fetching products");
+      const data = await response.json();
+      setProductsInCart(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  // Listen for changes in localStorage (from other tabs)
   useEffect(() => {
     const handleStorageChange = (event: StorageEvent) => {
       if (event.key === "cart") {
         const newCart = event.newValue;
         if (newCart) {
-          setProductsInCart(JSON.parse(newCart));
+          const productIds: number[] = JSON.parse(newCart);
+          if (productIds.length > 0) {
+            fetchProductsByIds(productIds);
+          } else {
+            setProductsInCart([]);
+          }
         } else {
           setProductsInCart([]);
         }
@@ -33,15 +51,21 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     };
   }, []);
 
+  // Load cart from localStorage when component mounts
   useEffect(() => {
     const cartString = localStorage.getItem("cart");
     if (cartString) {
-      setProductsInCart(JSON.parse(cartString));
+      const productIds: number[] = JSON.parse(cartString);
+      if (productIds.length > 0) {
+        fetchProductsByIds(productIds);
+      }
     }
   }, []);
 
+  // Save only product IDs to localStorage whenever cart changes
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(productsInCart));
+    const productIds = productsInCart.map(product => product.id);
+    localStorage.setItem("cart", JSON.stringify(productIds));
   }, [productsInCart]);
 
   const addToCart = (product: Product) => {

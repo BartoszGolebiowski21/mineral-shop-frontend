@@ -16,6 +16,8 @@
   align-items: center;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 @media (min-width: 58rem) {
