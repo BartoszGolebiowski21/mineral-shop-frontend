@@ -25,7 +25,8 @@ const MiniProductCard: React.FC<MiniProductCardProps> = ({ product }) => {
       </Link>
 
       <Link href={`/products/rings/${product.slug}`}>
-        <span>{product.name}</span>
+        <span>{product.name}</span><br/>
+        <span>{product.price} zł</span>
       </Link>
       
       <div

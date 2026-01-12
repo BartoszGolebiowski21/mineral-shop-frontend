@@ -7,12 +7,14 @@ interface CartContextType {
   productsInCart: Product[];
   addToCart: (product: Product) => void;
   removeFromCart: (id: number) => void;
+  totalPrice: number;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [productsInCart, setProductsInCart] = useState<Product[]>([]);
+  const [totalPrice, setTotalPrice] = useState<number>(0);
 
   // Function to fetch products using their IDs
   const fetchProductsByIds = async (ids: number[]) => {
@@ -66,6 +68,10 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const productIds = productsInCart.map(product => product.id);
     localStorage.setItem("cart", JSON.stringify(productIds));
+
+    // TODO: to fix Number(String(number)) parsing
+    const sum = productsInCart.reduce((acc, product) => acc + Number(String(product.price)), 0);
+    setTotalPrice(sum);
   }, [productsInCart]);
 
   const addToCart = (product: Product) => {
@@ -80,7 +86,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <CartContext.Provider value={{ productsInCart, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ productsInCart, addToCart, removeFromCart, totalPrice }}>
       {children}
     </CartContext.Provider>
   );
