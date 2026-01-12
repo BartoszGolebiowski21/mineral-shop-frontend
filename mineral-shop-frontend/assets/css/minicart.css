@@ -38,3 +38,38 @@
   overflow-y: auto;
   padding-right: 0.5rem;
 }
+
+.cart-button {
+  position: relative;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cart-product-counter {
+  position: absolute;
+  top: -0.4rem;
+  right: 1rem;
+  background-color: #b6a087;
+  color: white;
+  min-width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  pointer-events: none;
+
+  animation: pop 0.3s ease forwards;
+}
