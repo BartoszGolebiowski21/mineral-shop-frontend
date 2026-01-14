@@ -10,9 +10,9 @@ interface ImageSectionProps {
 const ImageSection: React.FC<ImageSectionProps> = ({ images }) => {
 
   return (
-    <div className="product-detail-image-container">
+    <>
       {images.map((image, index) =>
-        <div key={index} className="image-wrapper"  data-index={index}>
+        <div key={index} className="product-overview__image-wrapper" data-index={index}>
           <Image
             src={image.upload}
             alt="Product image"
@@ -21,19 +21,8 @@ const ImageSection: React.FC<ImageSectionProps> = ({ images }) => {
             unoptimized
           />
         </div>
-
-        
-
-        // <div key={index} className="image-wrapper">
-        //   <img
-        //     src={image.upload}
-        //     alt={image.upload}
-        //   />
-        // </div>
       )}
-    
-      <ImageArrows />
-    </div>
+    </>
   )
 };
 
