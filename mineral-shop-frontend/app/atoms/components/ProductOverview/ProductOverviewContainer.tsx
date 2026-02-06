@@ -6,7 +6,7 @@ interface ProductOverviewContainerProps {
 
 const fetchProduct = async (slug: string) => {
   const res = await fetch(
-    `http://localhost:8000/api/products/${slug}/`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/products/${slug}/`,
     {
       next: { revalidate: 60 },
     }

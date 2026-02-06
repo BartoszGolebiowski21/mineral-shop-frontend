@@ -1,0 +1,21 @@
+services:
+  web:
+    build:
+      context: ../mineral-shop-frontend
+      dockerfile: ../docker/Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - ../mineral-shop-frontend/.env
+    # volumes:
+    #   - ../mineral-shop-frontend:/app
+    #   - /app/node_modules
+    depends_on:
+      - nginx
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf

@@ -2,7 +2,7 @@ import ProductList from './ProductList';
 
 const fetchProducts = async () => {
   const res = await fetch(
-    `http://localhost:8000/api/products/`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/products/`,
     {
       next: { revalidate: 60 },
     }
