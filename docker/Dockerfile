@@ -10,6 +10,7 @@ RUN npm ci
 
 # Kopiujemy resztę aplikacji
 COPY . .
+COPY .env .env
 
 # Budujemy aplikację Next.js
 RUN npm run build
