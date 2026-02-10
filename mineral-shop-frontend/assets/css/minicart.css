@@ -18,13 +18,15 @@
     visibility 0s linear 0.5s;
 }
 
-.cart__button:hover + .minicart,
-.minicart:hover {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+@media (hover: hover) and (pointer: fine) {
+  .cart__button:hover + .minicart,
+  .minicart:hover {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 
-  transition-delay: 0s;
+    transition-delay: 0s;
+  }
 }
 
 .minicart__product-container {
