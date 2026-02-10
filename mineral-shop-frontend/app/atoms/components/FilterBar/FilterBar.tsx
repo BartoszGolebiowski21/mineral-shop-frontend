@@ -1,3 +1,5 @@
+import FilterStoneSection from "./FilterStoneSection/FilterStoneSection";
+
 const FilterBar = () => {
   return (
     <>
@@ -6,10 +8,7 @@ const FilterBar = () => {
         <div>Domyślne</div>
       </div>
       <div className='mb-4'>
-        <div className='font-medium'>KAMIENIE</div>
-        <div>Onyx</div>
-        <div>Diament</div>
-        <div>Beton</div>
+        <FilterStoneSection />
       </div>
       <div className='mb-4'>
         <div className='font-medium'>CENA</div>

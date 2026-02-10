@@ -6,6 +6,7 @@ export interface ImageObj {
 export interface Stone {
   id: number;
   name: string;
+  slug: string;
 }
 
 export interface Size {

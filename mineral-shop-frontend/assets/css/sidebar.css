@@ -4,3 +4,20 @@
   flex: 0 0 20%;
   padding-right: 1rem;
 }
+
+.filter-item-list {
+  height: 15rem;
+  overflow-y: auto;
+}
+
+.filter-button {
+  cursor: pointer;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-right: 0.2rem;
+}
+ 
+.filter-button.checked {
+  background-color: #b6a087;
+  color: white;
+}
