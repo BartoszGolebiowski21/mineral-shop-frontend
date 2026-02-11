@@ -6,6 +6,7 @@
 @import './reusable.css';
 @import './product-page.css';
 @import './minicart.css';
+@import './menu.css';
 
 .body {
   background-color: white;

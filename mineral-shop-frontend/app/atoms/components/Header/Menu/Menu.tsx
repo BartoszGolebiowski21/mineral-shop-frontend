@@ -11,7 +11,11 @@ const Menu: React.FC<CategoryListProps> = ({ categories }) => {
   return (
     <div className="menu-container my-4">
       {categories.map((category) => (
-        <NavButton key={category.id} href={`/products/${category.slug}`}>
+        <NavButton
+          key={category.id}
+          href={`/products/${category.slug}`}
+          className='menu-button'
+        >
           {category.name}
         </NavButton>
       ))}
