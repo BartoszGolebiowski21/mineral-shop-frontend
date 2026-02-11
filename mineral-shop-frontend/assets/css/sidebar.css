@@ -16,6 +16,10 @@
   padding-right: 0.5rem;
   margin-right: 0.2rem;
 }
+
+.filter-button:hover {
+  color: #b6a087;
+}
  
 .filter-button.checked {
   background-color: #b6a087;
