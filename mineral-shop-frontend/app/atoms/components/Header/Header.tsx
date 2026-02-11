@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from './NavBar/NavBar';
-import Menu from './Menu/Menu';
+import MenuContainer from './Menu/MenuContainer';
 
 
 const Header = () => {
@@ -8,7 +8,7 @@ const Header = () => {
     <>
       <NavBar />
       <div className="h-px bg-gray-300 mx-[2%]"></div>
-      <Menu />
+      <MenuContainer />
     </>
   )
 };
