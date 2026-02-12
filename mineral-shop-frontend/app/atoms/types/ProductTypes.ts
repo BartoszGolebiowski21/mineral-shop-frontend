@@ -6,6 +6,7 @@ export interface ImageObj {
 export interface Stone {
   id: number;
   name: string;
+  slug: string;
 }
 
 export interface Size {
@@ -34,3 +35,5 @@ export interface ProductDetail extends Product {
   size: Size;
   category: Category;
 }
+
+export type FilterOption = Category | Stone

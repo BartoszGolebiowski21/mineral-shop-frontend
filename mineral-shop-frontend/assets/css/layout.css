@@ -12,6 +12,7 @@
 }
 
 .header-container {
+  position: relative;
   display: flex;
   align-items: center;
   margin-top: 0.5rem;
@@ -49,7 +50,8 @@
   }
 }
 
-@media (max-width: 24rem) {
+/* hamburger disabled */
+/* @media (max-width: 24rem) {
   .hamburger-wrapper {
     display: block;
     padding-left: 1rem;
@@ -60,7 +62,7 @@
   .nav-buttons-wrapper {
     display: none;
   }
-}
+} */
 
 .nav-container {
   display: flex;

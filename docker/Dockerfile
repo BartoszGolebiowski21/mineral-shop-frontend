@@ -3,15 +3,14 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Kopiujemy tylko package.json i lock
 COPY package*.json ./
 
 RUN npm ci
 
-# Kopiujemy resztę aplikacji
 COPY . .
 
-# Budujemy aplikację Next.js
+ARG NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 RUN npm run build
 
 # 2. Production stage
@@ -19,7 +18,6 @@ FROM node:20-alpine AS runner
 
 WORKDIR /app
 
-# Kopiujemy tylko build i node_modules
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/node_modules ./node_modules

@@ -15,9 +15,10 @@ const NavBar = () => {
         <NavButtonsContainer />
       </div>
 
-      <div className="hamburger-wrapper">
+      {/* hamburger disabled */}
+      {/* <div className="hamburger-wrapper">
         <Hamburger />
-      </div>
+      </div> */}
     </div>
   );
 };

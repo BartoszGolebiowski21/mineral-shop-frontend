@@ -2,6 +2,7 @@ import '../assets/css/globals.css';
 import { Montserrat } from "next/font/google";
 import Header from './atoms/components/Header/Header';
 import { CartProvider } from './atoms/context/CartContext';
+import AnnouncementBar from './atoms/components/AnnouncementBar/AnnouncementBar';
 
 
 const montserrat = Montserrat({
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html className={montserrat.className}>
       <body>
         <CartProvider>
+          <AnnouncementBar />
           <Header />
           <main className="page-container">
             {children}
