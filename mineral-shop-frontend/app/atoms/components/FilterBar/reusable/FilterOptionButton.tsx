@@ -2,34 +2,35 @@
 
 import React from 'react'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
-import { Stone } from '@/app/atoms/types/ProductTypes';
+import { FilterOption } from '@/app/atoms/types/ProductTypes';
 
-interface StoneButtonProps {
-  stone: Stone;
+interface FilterOptionButtonProps {
+  filterItem: FilterOption;
+  filterKey: string;
 }
 
-const StoneButton: React.FC<StoneButtonProps> = ({ stone }) => {
+const FilterOptionButton: React.FC<FilterOptionButtonProps> = ({ filterItem, filterKey }) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const currentStones = searchParams.get('stones')?.split(',') || [];
-  const isChecked = currentStones.includes(stone.slug);
+  const currentStones = searchParams.get(filterKey)?.split(',') || [];
+  const isChecked = currentStones.includes(filterItem.slug);
 
   const toggleFilter = () => {
     const params = new URLSearchParams(searchParams.toString());
     let newStones: string[];
 
     if (isChecked) {
-      newStones = currentStones.filter(s => s !== stone.slug);
+      newStones = currentStones.filter(s => s !== filterItem.slug);
     } else {
-      newStones = [...currentStones, stone.slug];
+      newStones = [...currentStones, filterItem.slug];
     }
 
     if (newStones.length > 0) {
-      params.set('stones', newStones.join(','));
+      params.set(filterKey, newStones.join(','));
     } else {
-      params.delete('stones');
+      params.delete(filterKey);
     }
 
     router.push(`${pathname}?${params.toString()}`, { scroll: false });
@@ -40,9 +41,9 @@ const StoneButton: React.FC<StoneButtonProps> = ({ stone }) => {
       className={`filter-button ${isChecked ? "checked" : ""}`} 
       onClick={toggleFilter}
     >
-      {stone.name}
+      {filterItem.name}
     </div>
   )
 }
 
-export default StoneButton
+export default FilterOptionButton

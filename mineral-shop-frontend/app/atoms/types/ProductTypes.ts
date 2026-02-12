@@ -35,3 +35,5 @@ export interface ProductDetail extends Product {
   size: Size;
   category: Category;
 }
+
+export type FilterOption = Category | Stone

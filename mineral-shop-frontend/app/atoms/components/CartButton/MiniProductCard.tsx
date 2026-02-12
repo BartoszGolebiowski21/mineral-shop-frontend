@@ -14,7 +14,7 @@ const MiniProductCard: React.FC<MiniProductCardProps> = ({ product }) => {
 
   return (
     <div className='minicart__product-container mb-4'>
-      <Link href={`/products/rings/${product.slug}`}>
+      <Link href={`/products/${product.slug}`}>
         <Image
           src={product.images[0].upload}
           alt={product.images[0].upload}
@@ -24,7 +24,7 @@ const MiniProductCard: React.FC<MiniProductCardProps> = ({ product }) => {
         />
       </Link>
 
-      <Link href={`/products/rings/${product.slug}`}>
+      <Link href={`/products/${product.slug}`}>
         <span>{product.name}</span><br/>
         <span>{product.price} zł</span>
       </Link>
