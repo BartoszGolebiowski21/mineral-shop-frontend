@@ -7,6 +7,7 @@
 @import './product-page.css';
 @import './minicart.css';
 @import './menu.css';
+@import './announcement-bar.css';
 
 .body {
   background-color: white;
