@@ -3,7 +3,7 @@ import FilterOptionList from './FilterOptionList';
 
 const fetchOptions = async (url: string) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}${url}`,
+    `${process.env.INTERNAL_API_URL}${url}`,
     {
       next: { revalidate: 60 },
     }

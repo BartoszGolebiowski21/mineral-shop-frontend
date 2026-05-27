@@ -6,7 +6,7 @@ interface Props {
 }
 
 const fetchProducts = async (stones?: string, categories?: string) => {
-  const url = new URL(`${process.env.NEXT_PUBLIC_API_URL}/api/products/`);
+  const url = new URL(`${process.env.INTERNAL_API_URL}/api/products/`);
   
   if (stones) {
     url.searchParams.append('stones', stones);
