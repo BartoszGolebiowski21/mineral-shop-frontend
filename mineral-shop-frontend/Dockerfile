@@ -23,6 +23,8 @@ COPY --from=builder /app/next.config.ts ./
 
 ENV NODE_ENV=production
 
+USER node
+
 EXPOSE 3000
 
 CMD ["npm", "start"]
